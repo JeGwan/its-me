@@ -6,8 +6,8 @@ const styleVariables = {
   media: {
     mobile: 800,
   },
-  product: {
-    defaultImgUrl: "/images/default-product-image.jpg",
+  image: {
+    default: "/assets/picture.svg",
   },
   ui: {
     defaultHeight: 42,

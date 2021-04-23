@@ -1,7 +1,6 @@
 import Button from "@components/atoms/Button";
-import Input from "@components/atoms/Input";
-import Select from "@components/atoms/Select";
 import Title from "@components/atoms/Titles";
+import AppSwiper, { SwiperSlide } from "@components/modules/AppSwiper";
 import Alert from "@components/templates/Alert";
 import Container from "@components/templates/Container";
 import styleVariables from "@styles/variables";
@@ -68,8 +67,29 @@ const HomePageComp = styled.div`
   }
   & > .body {
     margin-top: 3rem;
+    & > .image-swiper {
+      margin: 0 -1.6rem;
+      .swiper-slide {
+        height: 300px;
+        overflow: hidden;
+        & > img {
+          transition: all 0.3s;
+          &:hover {
+            transform: scale(1.1);
+          }
+          cursor: pointer;
+          object-fit: contain;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
   }
 `;
+const activityImages: string[] = [
+  "https://www.ui4u.go.kr/depart/img/content/sub03/img_con03030100_01.jpg",
+  "http://img.khan.co.kr/news/2019/11/29/l_2019112901003607500286631.jpg",
+];
 const HomePage = () => {
   const [alertVisible, setAlertVisible] = useState(false);
   return (
@@ -153,6 +173,27 @@ const HomePage = () => {
             정하는 범위안에서 하되, 균등한 기회가 보장되어야 한다. 대한민국은
             민주공화국이다. 국가안전보장회의는 대통령이 주재한다.
           </p>
+          <Title level={1}>갤러리</Title>
+          <AppSwiper
+            className="image-swiper"
+            slidesPerView={1}
+            updateOnWindowResize={true}
+            threshold={10}
+            pagination
+          >
+            {activityImages.map((src, idx) => (
+              <SwiperSlide key={idx}>
+                <img
+                  src={src}
+                  alt={`image-${idx}`}
+                  onError={(e) => {
+                    e.currentTarget.src = styleVariables.image.default;
+                  }}
+                  // onClick={() => setPreviewImageUrl(image.imgFile)}
+                />
+              </SwiperSlide>
+            ))}
+          </AppSwiper>
         </div>
       </HomePageComp>
     </Container>
