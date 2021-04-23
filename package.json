@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "next",
     "build": "NODE_ENV=production next build",
+    "deploy": "yarn pre && yarn build && pm2 restart its-me",
     "start": "next start",
     "pre": "yarn install --production=false",
     "type-check": "tsc --pretty --noEmit",
