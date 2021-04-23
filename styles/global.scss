@@ -1,0 +1,26 @@
+@import "reset";
+@import "~swiper/swiper.scss";
+@import "~swiper/components/pagination/pagination.scss";
+:root {
+  --swiper-theme-color: #de0009;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Lato, Roboto, "Segoe UI",
+    "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+  // 모달이 열릴 경우 스크롤 막기 위해
+  &.modal-open {
+    overflow: hidden;
+  }
+}
+
+button,
+input,
+select {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+// font 변경될 경우 password의 특수문자를 지원하지 않는 폰트 때문에 sans-serif로 고정
+input[type="password"] {
+  font-family: sans-serif;
+}
