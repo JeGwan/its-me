@@ -21,6 +21,10 @@ select {
   -webkit-tap-highlight-color: transparent;
 }
 
+p {
+  word-break: keep-all;
+}
+
 // font 변경될 경우 password의 특수문자를 지원하지 않는 폰트 때문에 sans-serif로 고정
 input[type="password"] {
   font-family: sans-serif;
