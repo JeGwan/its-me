@@ -4,7 +4,7 @@ const primary = "#0050FF";
 const primaryAlpha = `rgb(${hexToRgb(primary).join(" ")} / 20%)`;
 const styleVariables = {
   media: {
-    mobile: 640,
+    mobile: 800,
   },
   product: {
     defaultImgUrl: "/images/default-product-image.jpg",

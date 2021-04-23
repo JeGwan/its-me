@@ -21,11 +21,11 @@ const maskAnimation = keyframes`
 
 const alertAnimation = keyframes`
   0% {
-    transform: scale(0.5) translate(0, 100%);
+    transform: scale(0.5) translate(0, -100%);
     opacity:0;
   }
-  55% {
-    transform: scale(1.2);
+  70% {
+    transform: scale(1.1);
   }
   100% {
     opacity:1;
@@ -42,12 +42,12 @@ const Mask = styled.div`
   outline: 0;
   z-index: 1;
   -webkit-overflow-scrolling: touch;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   /* todo 등장 animation 을 넣고 싶 다 아  */
   background-color: rgba(0, 0, 0, 0);
-  animation: ${maskAnimation} 0.3s forwards;
+  animation: ${maskAnimation} 0.3s ease-in-out forwards;
   /* todo 알러트는 처음은 scale 0 이다가. */
   &.hidden {
     display: none;
@@ -55,21 +55,17 @@ const Mask = styled.div`
   & > .alert {
     display: flex;
     flex-direction: column;
+    margin: 5rem auto 0;
     border-radius: 1.5rem;
     padding: 2rem 3rem;
-    min-height: 100px;
     max-height: 80vh;
     overflow-y: auto;
-    min-width: 300px;
-    max-width: ${styleVariables.media.mobile}px;
+    width: 100%;
+    max-width: 500px;
     background-color: white;
     box-sizing: border-box;
     position: relative;
-    animation: ${alertAnimation} 0.4s forwards;
-    @media screen and (max-width: ${styleVariables.media.mobile}px) {
-      height: 100%;
-      max-width: ${styleVariables.media.mobile}px;
-    }
+    animation: ${alertAnimation} 0.4s ease-in-out forwards;
     & > .alert-title {
       font-size: 24px;
       font-weight: bold;

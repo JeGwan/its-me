@@ -100,7 +100,9 @@ header,
 hgroup,
 menu,
 nav,
-section {
+section,
+main {
+  box-sizing: border-box;
   display: block;
 }
 
@@ -108,10 +110,6 @@ html {
   // 1rem = 10px
   font-size: 10px;
   line-height: 1.6;
-}
-
-body {
-  font-size: 1.4rem;
 }
 
 ol,

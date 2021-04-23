@@ -8,6 +8,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Lato, Roboto, "Segoe UI",
     "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
   // 모달이 열릴 경우 스크롤 막기 위해
+  font-size: 1.6rem;
   &.modal-open {
     overflow: hidden;
   }
