@@ -38,17 +38,44 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/favicon/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon/favicon-16x16.png"
+          />
+          <link rel="manifest" href="/favicon/site.webmanifest" />
+          <link
+            rel="mask-icon"
+            href="/favicon/safari-pinned-tab.svg"
+            color="#0050ff"
+          />
+          <link rel="shortcut icon" href="/favicon/favicon.ico" />
+          <meta name="msapplication-TileColor" content="#0050ff" />
+          <meta
+            name="msapplication-config"
+            content="/favicon/browserconfig.xml"
+          />
+          <meta name="theme-color" content="#ffffff" />
           <meta property="og:image" content="/social/og-image.jpg" />
           <meta property="og:image:height" content="262" />
           <meta property="og:image:width" content="500" />
-          <meta
-            property="og:title"
-            content="반갑습니다! 개발자 오제관입니다 😄"
-          />
+          <meta property="og:title" content="개발자 오제관입니다 😄" />
           <meta property="og:url" content="https://superposition.link" />
           <meta
             property="og:description"
-            content="비즈니스와 유저를 이해하고 소통이 잘 되는 개발자"
+            content="비즈니스와 유저를 이해하고 소통이 잘 되는 개발자, 저는 오제관입니다."
           />
         </Head>
         <body>
