@@ -193,7 +193,7 @@ const HomePage = () => {
           <Title level={1}>🧑‍🎨 포트폴리오</Title>
           <AppSwiper
             className="image-swiper"
-            slidesPerView={3}
+            slidesPerView={1}
             updateOnWindowResize={true}
             threshold={10}
             spaceBetween={10}

@@ -18,7 +18,7 @@ const PortfolioModalComp = styled.div`
           transform: scale(0.9);
         }
         cursor: pointer;
-        object-fit: cover;
+        object-fit: contain;
         width: 100%;
         height: 100%;
       }
@@ -34,7 +34,7 @@ const PortfolioModal = ({ portfolio, ...props }: PortfolioModalProps) => {
       <PortfolioModalComp>
         <AppSwiper
           className="image-swiper"
-          slidesPerView={3}
+          slidesPerView={1}
           updateOnWindowResize={true}
           threshold={10}
           spaceBetween={10}
