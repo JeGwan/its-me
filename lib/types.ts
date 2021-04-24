@@ -20,3 +20,14 @@ export interface Address {
   latitude: number;
   longitude: number;
 }
+
+export interface Portfolio {
+  title: string;
+  desc: string;
+  imageDir: string;
+  images: string[];
+  links?: {
+    title: string;
+    url: string;
+  }[];
+}

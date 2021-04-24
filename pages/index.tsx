@@ -3,6 +3,9 @@ import Title from "@components/atoms/Titles";
 import AppSwiper, { SwiperSlide } from "@components/modules/AppSwiper";
 import Alert from "@components/templates/Alert";
 import Container from "@components/templates/Container";
+import PortfolioModal from "@components/templates/PortfolioModal";
+import { portfolios } from "@lib/constants";
+import { Portfolio } from "@lib/types";
 import styleVariables from "@styles/variables";
 import { useState } from "react";
 import styled from "styled-components";
@@ -69,29 +72,38 @@ const HomePageComp = styled.div`
     margin-top: 3rem;
     & > .image-swiper {
       margin: 0 -1.6rem;
+      padding-bottom: 4rem;
       .swiper-slide {
-        height: 300px;
-        overflow: hidden;
-        & > img {
-          transition: all 0.3s;
-          &:hover {
-            transform: scale(1.1);
+        & > .thumbnail {
+          border: 1px solid ${styleVariables.colors.grey3};
+          height: 300px;
+          overflow: hidden;
+          & > img {
+            transition: all 0.3s;
+            transform: scale(0.8);
+            &:hover {
+              transform: scale(0.9);
+            }
+            cursor: pointer;
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
           }
-          cursor: pointer;
-          object-fit: contain;
-          width: 100%;
-          height: 100%;
+        }
+        & > h4 {
+          margin: 1rem 0;
+          text-align: center;
+          color: ${styleVariables.colors.grey3};
+          font-weight: bold;
         }
       }
     }
   }
 `;
-const activityImages: string[] = [
-  "https://www.ui4u.go.kr/depart/img/content/sub03/img_con03030100_01.jpg",
-  "http://img.khan.co.kr/news/2019/11/29/l_2019112901003607500286631.jpg",
-];
+
 const HomePage = () => {
   const [alertVisible, setAlertVisible] = useState(false);
+  const [portfolio, setPortfolio] = useState<Portfolio>();
   return (
     <Container>
       <Alert
@@ -173,24 +185,37 @@ const HomePage = () => {
             정하는 범위안에서 하되, 균등한 기회가 보장되어야 한다. 대한민국은
             민주공화국이다. 국가안전보장회의는 대통령이 주재한다.
           </p>
-          <Title level={1}>갤러리</Title>
+          <PortfolioModal
+            visible={!!portfolio}
+            portfolio={portfolio}
+            onClose={() => setPortfolio(undefined)}
+          />
+          <Title level={1}>🧑‍🎨 포트폴리오</Title>
           <AppSwiper
             className="image-swiper"
-            slidesPerView={1}
+            slidesPerView={3}
             updateOnWindowResize={true}
             threshold={10}
+            spaceBetween={10}
             pagination
           >
-            {activityImages.map((src, idx) => (
+            {portfolios.map((portfolio, idx) => (
               <SwiperSlide key={idx}>
-                <img
-                  src={src}
-                  alt={`image-${idx}`}
-                  onError={(e) => {
-                    e.currentTarget.src = styleVariables.image.default;
-                  }}
-                  // onClick={() => setPreviewImageUrl(image.imgFile)}
-                />
+                <div className="thumbnail">
+                  <img
+                    src={
+                      portfolio.images.length
+                        ? portfolio.imageDir + portfolio.images[0]
+                        : styleVariables.image.default
+                    }
+                    alt={`image-${idx}`}
+                    onError={(e) => {
+                      e.currentTarget.src = styleVariables.image.default;
+                    }}
+                    onClick={() => setPortfolio(portfolio)}
+                  />
+                </div>
+                <h4>{portfolio.title}</h4>
               </SwiperSlide>
             ))}
           </AppSwiper>
