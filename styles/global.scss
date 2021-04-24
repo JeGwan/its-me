@@ -29,3 +29,7 @@ p {
 input[type="password"] {
   font-family: sans-serif;
 }
+// swiper 내부 아이템이 긁혀지지 않게
+.swiper-slide {
+  -webkit-tap-highlight-color: transparent;
+}
