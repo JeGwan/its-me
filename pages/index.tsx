@@ -126,7 +126,7 @@ const HomePage = () => {
             <span className="big blue">오제관</span>입니다!
           </h2>
           <div className="thumbnail">
-            <img src="/images/profile.png" alt="" />
+            <img src="/images/profile.webp" alt="" />
           </div>
           <Button
             className="say-hello"
@@ -203,11 +203,7 @@ const HomePage = () => {
               <SwiperSlide key={idx}>
                 <div className="thumbnail">
                   <img
-                    src={
-                      portfolio.images.length
-                        ? portfolio.imageDir + portfolio.images[0]
-                        : styleVariables.image.default
-                    }
+                    src={portfolio.imageDir + portfolio.thumbnail}
                     alt={`image-${idx}`}
                     onError={(e) => {
                       e.currentTarget.src = styleVariables.image.default;

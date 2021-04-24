@@ -24,6 +24,7 @@ export interface Address {
 export interface Portfolio {
   title: string;
   desc: string;
+  thumbnail: string;
   imageDir: string;
   images: string[];
   links?: {
