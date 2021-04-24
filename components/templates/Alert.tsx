@@ -1,5 +1,4 @@
 import Button from "@components/atoms/Button";
-import styleVariables from "@styles/variables";
 import {
   CSSProperties,
   HTMLAttributes,
@@ -9,15 +8,7 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 import styled, { keyframes } from "styled-components";
-
-const maskAnimation = keyframes`
-  from {
-    background-color: rgba(0, 0, 0, 0);
-  }
-  to {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-`;
+import Mask from "@components/atoms/Mask";
 
 const alertAnimation = keyframes`
   0% {
@@ -32,26 +23,8 @@ const alertAnimation = keyframes`
     transform: scale(1);
   }
 `;
-const Mask = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: auto;
-  outline: 0;
-  z-index: 1;
-  -webkit-overflow-scrolling: touch;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
-  /* todo 등장 animation 을 넣고 싶 다 아  */
-  background-color: rgba(0, 0, 0, 0);
-  animation: ${maskAnimation} 0.3s ease-in-out forwards;
-  /* todo 알러트는 처음은 scale 0 이다가. */
-  &.hidden {
-    display: none;
-  }
+
+const AlertComp = styled(Mask)`
   & > .alert {
     display: flex;
     flex-direction: column;
@@ -135,7 +108,7 @@ const Alert = ({
   if (!alertElement) return null;
   if (!visible && destroyOnClose) return null;
   return createPortal(
-    <Mask onClick={onClose} className={visible ? "visible" : "hidden"}>
+    <AlertComp onClick={onClose} className={visible ? "visible" : "hidden"}>
       <div className="alert" onClick={(e) => e.stopPropagation()} {...props}>
         <h2 className="alert-title">{title}</h2>
         <div className="alert-body" style={bodyStyle}>
@@ -149,7 +122,7 @@ const Alert = ({
           )}
         </div>
       </div>
-    </Mask>,
+    </AlertComp>,
     alertElement
   );
 };

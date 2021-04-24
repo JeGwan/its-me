@@ -10,18 +10,9 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 import styled from "styled-components";
+import Mask from "@components/atoms/Mask";
 
-const Mask = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: auto;
-  outline: 0;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.3);
-  -webkit-overflow-scrolling: touch;
+const ModalComp = styled(Mask)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,7 +96,7 @@ export class ModalByClass extends Component<ModalProps> {
     } = this.props;
     if (!visible) return null;
     return createPortal(
-      <Mask onClick={() => onClose && onClose()}>
+      <ModalComp onClick={() => onClose && onClose()}>
         <div className="modal" onClick={(e) => e.stopPropagation()} {...props}>
           <div className="modal-header">{title}</div>
           <div className="modal-body" style={bodyStyle}>
@@ -115,7 +106,7 @@ export class ModalByClass extends Component<ModalProps> {
             <Button onClick={() => onClose && onClose()}>닫기</Button>
           </div>
         </div>
-      </Mask>,
+      </ModalComp>,
       this.element
     );
   }
@@ -165,7 +156,7 @@ const Modal = ({
   // modalElement 가 초기화가 되지 않았거나, visible이 false 면 null 반환
   if (!modalElement || !visible) return null;
   return createPortal(
-    <Mask onClick={onClose}>
+    <ModalComp onClick={onClose}>
       <div className="modal" onClick={(e) => e.stopPropagation()} {...props}>
         <div className="modal-header">
           <h2>{title}</h2>
@@ -178,7 +169,7 @@ const Modal = ({
         </div>
         {footer && <div className="modal-footer"></div>}
       </div>
-    </Mask>,
+    </ModalComp>,
     modalElement
   );
 };
