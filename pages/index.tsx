@@ -90,7 +90,7 @@ const HomePageComp = styled.div`
             height: 100%;
           }
         }
-        & > h4 {
+        & > .title {
           margin: 1rem 0;
           text-align: center;
           color: ${styleVariables.colors.grey3};
@@ -211,7 +211,7 @@ const HomePage = () => {
                     onClick={() => setPortfolio(portfolio)}
                   />
                 </div>
-                <h4>{portfolio.title}</h4>
+                <p className="title">{portfolio.title}</p>
               </SwiperSlide>
             ))}
           </AppSwiper>
