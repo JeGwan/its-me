@@ -4,7 +4,6 @@ import { ButtonHTMLAttributes } from "react";
 import styled from "styled-components";
 
 export const ButtonComp = styled.button`
-  width: max-content;
   height: ${styleVariables.ui.defaultHeight}px;
   padding: 0 ${styleVariables.ui.defaultPadding}px;
   line-height: ${styleVariables.ui.defaultHeight}px;
