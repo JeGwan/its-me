@@ -9,8 +9,19 @@ import {
   useState,
 } from "react";
 import { createPortal } from "react-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Mask from "@components/atoms/Mask";
+
+const modalAnimation = keyframes`
+  0% {
+    transform: scale(0.5);
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+    transform: scale(1);
+  }
+`;
 
 const ModalComp = styled(Mask)`
   display: flex;
@@ -19,6 +30,7 @@ const ModalComp = styled(Mask)`
   & > .modal {
     display: flex;
     flex-direction: column;
+    animation: ${modalAnimation} 0.4s ease-in-out forwards;
     & > .modal-header {
       position: relative;
       display: flex;
