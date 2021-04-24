@@ -13,7 +13,7 @@ const ContainerComp = styled.div`
   }
   & > main {
     min-height: 100vh;
-    padding: ${styleVariables.ui.defaultPadding}px;
+    padding: 50px ${styleVariables.ui.defaultPadding}px;
     & > section {
       /* 모바일 퍼스트 */
       max-width: ${styleVariables.media.mobile}px;

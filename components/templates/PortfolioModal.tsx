@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal, { ModalProps } from "./Modal";
 import styled from "styled-components";
 import { Portfolio } from "@lib/types";
 import Title from "@components/atoms/Titles";
 import AppSwiper, { SwiperSlide } from "@components/modules/AppSwiper";
 import styleVariables from "@styles/variables";
+import ImageModal from "./ImageModal";
 
 const PortfolioModalComp = styled.div`
   & > .image-swiper {
@@ -29,8 +30,14 @@ interface PortfolioModalProps extends ModalProps {
   portfolio?: Portfolio;
 }
 const PortfolioModal = ({ portfolio, ...props }: PortfolioModalProps) => {
+  const [previewImage, setPreviewImage] = useState<string>();
   return (
     <Modal title={portfolio?.title} {...props}>
+      <ImageModal
+        visible={!!previewImage}
+        imageUrl={previewImage}
+        onClose={() => setPreviewImage(undefined)}
+      />
       <PortfolioModalComp>
         <AppSwiper
           className="image-swiper"
@@ -41,17 +48,21 @@ const PortfolioModal = ({ portfolio, ...props }: PortfolioModalProps) => {
           pagination
         >
           {portfolio?.images
-            ? portfolio.images.map((src, index) => (
-                <SwiperSlide key={index}>
-                  <img
-                    src={portfolio.imageDir + src}
-                    alt={`image-${index}`}
-                    onError={(e) => {
-                      e.currentTarget.src = styleVariables.assets.picture;
-                    }}
-                  />
-                </SwiperSlide>
-              ))
+            ? portfolio.images.map((src, index) => {
+                const imageSrc = portfolio.imageDir + src;
+                return (
+                  <SwiperSlide key={index}>
+                    <img
+                      src={imageSrc}
+                      alt={`image-${index}`}
+                      onError={(e) => {
+                        e.currentTarget.src = styleVariables.assets.picture;
+                      }}
+                      onClick={() => setPreviewImage(imageSrc)}
+                    />
+                  </SwiperSlide>
+                );
+              })
             : null}
         </AppSwiper>
         <Title level={3}>설명</Title>

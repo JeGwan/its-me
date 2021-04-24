@@ -9,7 +9,7 @@ export const portfolios: Portfolio[] = [
     imageDir: "/images/portfolios/warranty/",
     thumbnail: "1.webp",
     images: ["1.png", "2.png", "3.png", "4.png"],
-    links: [{ title: "Warranty", url: "https://warranty.donenpero.com" }],
+    links: [{ title: "Warranty", url: "https://warranty.dongnepro.com" }],
   },
   {
     title: "WeView : 전자 제품 리뷰 웹사이트",

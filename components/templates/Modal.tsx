@@ -44,7 +44,12 @@ const ModalComp = styled(Mask)`
       color: white;
       font-weight: bold;
       & > .modal-close {
+        cursor: pointer;
+        transition: all 0.3s;
         background-color: transparent;
+        &:hover {
+          background-color: ${styleVariables.colors.dark};
+        }
         background-image: url(${styleVariables.assets.close});
         background-repeat: no-repeat;
         background-position: center;

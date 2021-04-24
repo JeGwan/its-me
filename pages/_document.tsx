@@ -62,7 +62,7 @@ export default class MyDocument extends Document {
             color="#0050ff"
           />
           <link rel="shortcut icon" href="/favicon/favicon.ico" />
-          <meta name="msapplication-TileColor" content="#0050ff" />
+          <meta name="msapplication-TileColor" content="#ffffff" />
           <meta
             name="msapplication-config"
             content="/favicon/browserconfig.xml"
