@@ -206,7 +206,7 @@ const HomePage = () => {
                     src={portfolio.imageDir + portfolio.thumbnail}
                     alt={`image-${idx}`}
                     onError={(e) => {
-                      e.currentTarget.src = styleVariables.image.default;
+                      e.currentTarget.src = styleVariables.assets.picture;
                     }}
                     onClick={() => setPortfolio(portfolio)}
                   />

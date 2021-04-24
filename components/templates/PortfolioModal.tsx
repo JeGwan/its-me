@@ -47,7 +47,7 @@ const PortfolioModal = ({ portfolio, ...props }: PortfolioModalProps) => {
                     src={portfolio.imageDir + src}
                     alt={`image-${index}`}
                     onError={(e) => {
-                      e.currentTarget.src = styleVariables.image.default;
+                      e.currentTarget.src = styleVariables.assets.picture;
                     }}
                   />
                 </SwiperSlide>

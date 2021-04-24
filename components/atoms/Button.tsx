@@ -13,7 +13,6 @@ export const ButtonComp = styled.button`
   font-weight: bold;
   color: ${styleVariables.colors.grey1};
   background-color: ${styleVariables.colors.grey7};
-  flex: 0 0 auto;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;

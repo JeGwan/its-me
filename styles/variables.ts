@@ -6,8 +6,9 @@ const styleVariables = {
   media: {
     mobile: 800,
   },
-  image: {
-    default: "/assets/picture.svg",
+  assets: {
+    close: "/assets/close.svg",
+    picture: "/assets/picture.svg",
   },
   ui: {
     defaultHeight: 42,

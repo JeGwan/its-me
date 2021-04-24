@@ -36,18 +36,25 @@ const ModalComp = styled(Mask)`
       display: flex;
       align-items: center;
       flex: 0 0 48px;
+      padding: 0 16px;
+      height: 48px;
+      font-size: 1.6rem;
+      /* border-bottom: 1px solid #eee; */
+      background-color: ${styleVariables.colors.primary};
+      color: white;
+      font-weight: bold;
       & > .modal-close {
-        background: transparent;
-        padding: 0 16px;
+        background-color: transparent;
+        background-image: url(${styleVariables.assets.close});
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 16px;
         height: 48px;
+        width: 48px;
         position: absolute;
         top: 0;
         right: 0;
       }
-      padding: 0 16px;
-      height: 48px;
-      font-size: 1.6rem;
-      border-bottom: 1px solid #eee;
     }
     & > .modal-body {
       flex: auto;
@@ -72,56 +79,13 @@ const ModalComp = styled(Mask)`
     }
   }
 `;
+
 export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   title?: string;
   visible?: boolean;
   onClose?: () => void;
   footer?: ReactNode;
   bodyStyle?: CSSProperties;
-}
-export class ModalByClass extends Component<ModalProps> {
-  element!: HTMLElement;
-  modalRoot!: HTMLElement;
-  constructor(props: ModalProps) {
-    super(props);
-    if (typeof document !== "undefined") {
-      this.element = document.createElement("div");
-      this.modalRoot = document.getElementById("__next") as HTMLElement;
-    }
-  }
-
-  componentDidMount() {
-    this.modalRoot.appendChild(this.element);
-  }
-
-  componentWillUnmount() {
-    this.modalRoot.removeChild(this.element);
-  }
-  render() {
-    const {
-      title = "ModalTitle",
-      children,
-      visible = false,
-      onClose,
-      bodyStyle,
-      ...props
-    } = this.props;
-    if (!visible) return null;
-    return createPortal(
-      <ModalComp onClick={() => onClose && onClose()}>
-        <div className="modal" onClick={(e) => e.stopPropagation()} {...props}>
-          <div className="modal-header">{title}</div>
-          <div className="modal-body" style={bodyStyle}>
-            {children}
-          </div>
-          <div className="modal-footer">
-            <Button onClick={() => onClose && onClose()}>닫기</Button>
-          </div>
-        </div>
-      </ModalComp>,
-      this.element
-    );
-  }
 }
 
 const Modal = ({
@@ -172,9 +136,7 @@ const Modal = ({
       <div className="modal" onClick={(e) => e.stopPropagation()} {...props}>
         <div className="modal-header">
           <h2>{title}</h2>
-          <button className="modal-close" onClick={onClose}>
-            닫기
-          </button>
+          <button className="modal-close" onClick={onClose} />
         </div>
         <div className="modal-body" style={bodyStyle}>
           {children}

@@ -17,7 +17,7 @@ const ImageModal = ({ imageUrl, ...props }: ImageModalProps) => {
   return (
     <Modal title="이미지 보기" {...props}>
       <ImageModalComp>
-        <img src={imageUrl || styleVariables.image.default} alt="이미지" />
+        <img src={imageUrl || styleVariables.assets.picture} alt="이미지" />
       </ImageModalComp>
     </Modal>
   );
