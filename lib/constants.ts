@@ -1,8 +1,12 @@
 import { Portfolio } from "./types";
 
 export const APP_NAME = "It's me : 개발자 오제관 자기소개서";
-export const contacts = [
-  { type: "email", value: "emperorvv@gmail.com" },
+export const contacts: { type: string; value: string; link?: string }[] = [
+  {
+    type: "email",
+    value: "emperorvv@gmail.com",
+    link: "mailto:emperorvv@gmail.com",
+  },
   { type: "github", value: "https://github.com/JeGwan" },
   { type: "kakao", value: "https://open.kakao.com/o/s36YmZ9c" },
 ];

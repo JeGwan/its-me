@@ -112,6 +112,9 @@ const HomePageComp = styled.div`
         dd {
           font-weight: bold;
           word-break: break-all;
+          a {
+            color: ${styleVariables.colors.grey1};
+          }
         }
       }
     }
@@ -263,10 +266,14 @@ const HomePage = () => {
           </AppSwiper>
           <Title level={1}>📞 Contact</Title>
           <div className="contact">
-            {contacts.map(({ type, value }, index) => (
+            {contacts.map(({ type, value, link }, index) => (
               <dl key={index}>
                 <dt>{type}</dt>
-                <dd>{value}</dd>
+                <dd>
+                  <a target="_blank" href={link || value}>
+                    {value}
+                  </a>
+                </dd>
               </dl>
             ))}
           </div>
