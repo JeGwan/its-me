@@ -1,6 +1,76 @@
 import { Portfolio } from "./types";
 
 export const APP_NAME = "자기소개서";
+
+export const techStacks: { title: string; stacks: string[] }[] = [
+  {
+    title: "Front-end(Web)",
+    stacks: [
+      "TypeScript.js",
+      "Node.js",
+      "Next.js",
+      "React.js",
+      "GraphQL",
+      "ApolloClient",
+      "Axios",
+      "dotenv",
+      "sass",
+      "less",
+      "styled-components",
+      "Swiper.js",
+      "dayjs",
+      "Moment.js",
+      "ant-design",
+    ],
+  },
+  { title: "Front-end(Mobile)", stacks: ["React Native", "expo"] },
+  {
+    title: "Back-end",
+    stacks: [
+      "TypeScript.js",
+      "Node.js",
+      "express.js",
+      "ApolloServer",
+      "TypeGraphQL",
+      "TypeORM",
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "PHP",
+      "CentOS",
+      "Ubuntu",
+      "Nginx",
+      "Apache",
+    ],
+  },
+  {
+    title: "Infra",
+    stacks: [
+      "AWS EC2",
+      "AWS Lightsail",
+      "AWS Route53",
+      "AWS S3",
+      "AWS IAM",
+      "AWS Congnito",
+    ],
+  },
+  {
+    title: "Tool",
+    stacks: [
+      "Postman",
+      "Zeplin",
+      "Firebase",
+      "BitBucket",
+      "JIRA",
+      "Docker",
+      "Slack",
+      "Github",
+      "Photoshop",
+      "Illustrator",
+    ],
+  },
+];
+
 export const portfolios: Portfolio[] = [
   {
     title: "Warranty: 동네프로 유저용 웹사이트",
