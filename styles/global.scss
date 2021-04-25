@@ -33,3 +33,11 @@ input[type="password"] {
 .swiper-slide {
   -webkit-tap-highlight-color: transparent;
 }
+
+a {
+  color: #1b1b1b;
+  transition: color 0.3s;
+  &:hover {
+    color: #0050ff;
+  }
+}

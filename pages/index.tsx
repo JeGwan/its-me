@@ -112,9 +112,6 @@ const HomePageComp = styled.div`
         dd {
           font-weight: bold;
           word-break: break-all;
-          a {
-            color: ${styleVariables.colors.grey1};
-          }
         }
       }
     }
@@ -264,6 +261,13 @@ const HomePage = () => {
               </SwiperSlide>
             ))}
           </AppSwiper>
+          <Title level={1}>✏️ 이런 걸 공부했어요</Title>
+          <a
+            target="_blank"
+            href="https://www.notion.so/e82ceab0c8734ba8a9eaaba5c27ff128"
+          >
+            Notion page : 개발공부
+          </a>
           <Title level={1}>📞 Contact</Title>
           <div className="contact">
             {contacts.map(({ type, value, link }, index) => (
