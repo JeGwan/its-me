@@ -13,10 +13,10 @@ const ContainerComp = styled.div`
   }
   & > main {
     min-height: 100vh;
-    padding: 50px ${styleVariables.ui.defaultPadding}px;
     & > section {
       /* 모바일 퍼스트 */
       max-width: ${styleVariables.media.mobile}px;
+      padding: 1.6rem ${styleVariables.ui.defaultPadding}px 5rem;
       margin: 0 auto;
     }
     & > footer {
