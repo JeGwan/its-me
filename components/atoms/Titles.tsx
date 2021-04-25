@@ -6,7 +6,7 @@ const TitleComp = styled.h1`
     margin-top: 0;
   }
   font-weight: bold;
-  margin: 3rem 0 2rem;
+  margin: 2em 0 1em;
   &.lv-1 {
     font-size: 2.4rem;
   }
