@@ -6,7 +6,7 @@ import AppSwiper, { SwiperSlide } from "@components/modules/AppSwiper";
 import Alert from "@components/templates/Alert";
 import Container from "@components/templates/Container";
 import PortfolioModal from "@components/templates/PortfolioModal";
-import { portfolios, techStacks } from "@lib/constants";
+import { contacts, portfolios, techStacks } from "@lib/constants";
 import { Portfolio } from "@lib/types";
 import styleVariables from "@styles/variables";
 import React, { useState } from "react";
@@ -97,6 +97,21 @@ const HomePageComp = styled.div`
           text-align: center;
           color: ${styleVariables.colors.grey3};
           font-weight: bold;
+        }
+      }
+    }
+    & > .contact {
+      & > dl {
+        display: flex;
+        align-items: flex-start;
+        dt {
+          flex: 0 0 80px;
+          margin-right: 0.8rem;
+          color: ${styleVariables.colors.grey3};
+        }
+        dd {
+          font-weight: bold;
+          word-break: break-all;
         }
       }
     }
@@ -246,6 +261,15 @@ const HomePage = () => {
               </SwiperSlide>
             ))}
           </AppSwiper>
+          <Title level={1}>📞 Contact</Title>
+          <div className="contact">
+            {contacts.map(({ type, value }, index) => (
+              <dl key={index}>
+                <dt>{type}</dt>
+                <dd>{value}</dd>
+              </dl>
+            ))}
+          </div>
         </div>
       </HomePageComp>
     </Container>

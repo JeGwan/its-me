@@ -1,7 +1,11 @@
 import { Portfolio } from "./types";
 
-export const APP_NAME = "자기소개서";
-
+export const APP_NAME = "It's me : 개발자 오제관 자기소개서";
+export const contacts = [
+  { type: "email", value: "emperorvv@gmail.com" },
+  { type: "github", value: "https://github.com/JeGwan" },
+  { type: "kakao", value: "https://open.kakao.com/o/s36YmZ9c" },
+];
 export const techStacks: { title: string; stacks: string[] }[] = [
   {
     title: "Front-end(Web)",
