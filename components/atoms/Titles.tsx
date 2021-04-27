@@ -14,13 +14,16 @@ const TitleComp = styled.h1`
     font-size: 2.2rem;
   }
   &.lv-3 {
-    font-size: 2rem;
-  }
-  &.lv-4 {
     font-size: 1.8rem;
+    margin: 1em 0;
   }
   &.lv-4 {
     font-size: 1.6rem;
+    margin: 1em 0;
+  }
+  &.lv-5 {
+    font-size: 1.4rem;
+    margin: 1em 0;
   }
 `;
 

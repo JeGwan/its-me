@@ -17,7 +17,7 @@ export const ButtonComp = styled.button`
   white-space: nowrap;
   border-radius: 0.4rem;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: background-color 0.3s;
   text-decoration: none;
   &.full {
     display: block;
