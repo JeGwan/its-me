@@ -63,6 +63,10 @@ const HomePageComp = styled.div`
     }
   }
   & > .body {
+    img.full {
+      display: block;
+      width: 100%;
+    }
     & > ol {
       list-style: decimal;
       margin-left: 2.5rem;
@@ -359,7 +363,12 @@ const HomePage = () => {
             https://github.com/JeGwan/its-me
           </a>
           <Title level={3}>Lighthouse score</Title>
-          <p>준비중</p>
+          <img
+            className="full"
+            src="/lighthouse/2021-04-28.webp"
+            alt="lighthouse"
+          />
+          <p>2021-04-28 기준</p>
           <Title level={1}>📞 Contact</Title>
           <div className="contact">
             {contacts.map(({ type, value, link }, index) => (
