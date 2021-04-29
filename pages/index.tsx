@@ -311,9 +311,35 @@ const HomePage = () => {
               </React.Fragment>
             );
           })}
-          {/* <Title level={1}>📚 읽은 책들</Title>
-          <Title level={1}>😀 개발 관련 대외 활동</Title>
-          <Title level={1}>🏆 수상</Title> */}
+
+          <Title level={1}>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.notion.so/6cbab5168b144930ad964c564536eeeb"
+            >
+              📃 경력 및 프로젝트 : Notion page
+            </a>
+          </Title>
+          <Title level={1}>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.notion.so/04856bda27a14f28bef515040aadd991"
+            >
+              🏆 수상 및 활동 : Notion page
+            </a>
+          </Title>
+          <Title level={1}>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.notion.so/immutable-e82ceab0c8734ba8a9eaaba5c27ff128"
+            >
+              📚 블로그 겸 공부 기록 : Notion page
+            </a>
+          </Title>
+          {/* <Title level={1}>📚 읽은 책들</Title> */}
           <PortfolioModal
             visible={!!portfolio}
             portfolio={portfolio}
@@ -345,14 +371,6 @@ const HomePage = () => {
               </SwiperSlide>
             ))}
           </AppSwiper>
-          <Title level={1}>✏️ 이런 걸 공부했어요</Title>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.notion.so/e82ceab0c8734ba8a9eaaba5c27ff128"
-          >
-            Notion page : 개발공부
-          </a>
           <Title level={1}>📕 이 사이트는요!</Title>
           <Title level={3}>Github repository</Title>
           <a
