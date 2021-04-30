@@ -340,6 +340,14 @@ const HomePage = () => {
             </a>
           </Title>
           {/* <Title level={1}>📚 읽은 책들</Title> */}
+
+          <Title level={1}>
+            <a target="_blank" href="/portfolio.pdf">
+              🧑‍🎨 포트폴리오
+            </a>
+          </Title>
+          {/* 
+          // 포트폴리오 는 준비될 때까지 PDF로 하기
           <PortfolioModal
             visible={!!portfolio}
             portfolio={portfolio}
@@ -370,7 +378,7 @@ const HomePage = () => {
                 <p className="title">{portfolio.title}</p>
               </SwiperSlide>
             ))}
-          </AppSwiper>
+          </AppSwiper> */}
           <Title level={1}>📕 이 사이트는요!</Title>
           <Title level={3}>Github repository</Title>
           <a
