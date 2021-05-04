@@ -125,7 +125,7 @@ const HomePageComp = styled.div`
   & > .say-hello {
     position: fixed;
     right: calc(10px + env(safe-area-inset-right, 16px));
-    bottom: calc(10px + env(safe-area-inset-right, 16px));
+    bottom: calc(10px + env(safe-area-inset-bottom, 16px));
   }
 `;
 
