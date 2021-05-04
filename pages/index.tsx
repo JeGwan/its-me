@@ -17,11 +17,7 @@ const HomePageComp = styled.div`
     position: relative;
     padding-bottom: 100px; // thumbnail 때문에
     margin-bottom: 50px; // thumbnail 때문에
-    & > .say-hello {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-    }
+
     & > .title {
       font-size: 4rem;
       line-height: 1.4;
@@ -126,6 +122,11 @@ const HomePageComp = styled.div`
       }
     }
   }
+  & > .say-hello {
+    position: fixed;
+    right: calc(10px + env(safe-area-inset-right, 16px));
+    bottom: calc(10px + env(safe-area-inset-right, 16px));
+  }
 `;
 
 const HomePage = () => {
@@ -155,13 +156,6 @@ const HomePage = () => {
           <div className="thumbnail">
             <img src="/images/profile.webp" alt="" />
           </div>
-          <Button
-            type="primary"
-            className="say-hello"
-            onClick={() => setAlertVisible(true)}
-          >
-            인사하기 👋
-          </Button>
         </div>
         <div className="body">
           <Title level={1}>👦🏻 한 줄 소개</Title>
@@ -409,6 +403,13 @@ const HomePage = () => {
             ))}
           </div>
         </div>
+        <Button
+          type="primary"
+          className="say-hello"
+          onClick={() => setAlertVisible(true)}
+        >
+          인사하기 👋
+        </Button>
       </HomePageComp>
     </Container>
   );
