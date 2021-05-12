@@ -13,6 +13,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const HomePageComp = styled.div`
+  position: relative;
   & > .header {
     position: relative;
     padding-bottom: 100px; // thumbnail 때문에
@@ -57,8 +58,15 @@ const HomePageComp = styled.div`
         height: 100%;
       }
     }
+
+    & > button {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
   }
   & > .body {
+    padding-bottom: 42px;
     img.full {
       display: block;
       width: 100%;
@@ -79,7 +87,8 @@ const HomePageComp = styled.div`
     }
     & > .image-swiper {
       margin: 0 -1.6rem;
-      padding-bottom: 4rem;
+      /* say-hello floating button 때문에 확보 */
+      padding-bottom: calc(42px + env(safe-area-inset-bottom, 16px));
       .swiper-slide {
         cursor: pointer;
         & > .thumbnail {
@@ -124,8 +133,19 @@ const HomePageComp = styled.div`
   }
   & > .say-hello {
     position: fixed;
-    right: calc(10px + env(safe-area-inset-right, 16px));
-    bottom: calc(10px + env(safe-area-inset-bottom, 16px));
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    padding-bottom: calc(16px + env(safe-area-inset-bottom, 16px));
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+    }
+    & > button {
+      width: 80%;
+      max-width: 300px;
+    }
   }
 `;
 
@@ -156,6 +176,9 @@ const HomePage = () => {
           <div className="thumbnail">
             <img src="/images/profile.webp" alt="" />
           </div>
+          <Button type="primary" onClick={() => setAlertVisible(true)}>
+            👋 인사하기
+          </Button>
         </div>
         <div className="body">
           <Title level={1}>👦🏻 한 줄 소개</Title>
@@ -403,13 +426,11 @@ const HomePage = () => {
             ))}
           </div>
         </div>
-        <Button
-          type="primary"
-          className="say-hello"
-          onClick={() => setAlertVisible(true)}
-        >
-          인사하기 👋
-        </Button>
+        {/* <div className="say-hello">
+          <Button type="primary" onClick={() => setAlertVisible(true)}>
+            👋 인사하기
+          </Button>
+        </div> */}
       </HomePageComp>
     </Container>
   );
