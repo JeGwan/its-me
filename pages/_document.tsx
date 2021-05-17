@@ -76,11 +76,11 @@ export default class MyDocument extends Document {
           <meta property="og:url" content="https://superposition.link" />
           <meta
             property="og:description"
-            content="비즈니스와 유저를 이해하고 소통이 잘 되는 개발자, 저는 오제관입니다."
+            content="비즈니스와 유저를 이해하고 소통이 잘 되는 개발자 오제관입니다."
           />
           <meta
             name="description"
-            content="비즈니스와 유저를 이해하고 소통이 잘 되는 개발자, 저는 오제관입니다."
+            content="비즈니스와 유저를 이해하고 소통이 잘 되는 개발자 오제관입니다."
           />
           <meta name="keywords" content="개발자,오제관,자기소개서" />
         </Head>
