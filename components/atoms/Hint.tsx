@@ -1,9 +1,9 @@
-import styleVariables from "@styles/variables";
+import stc from "@styles/constants";
 import styled from "styled-components";
 
 const Hint = styled.span`
   font-size: 1.4rem;
-  color: ${styleVariables.colors.light};
+  color: ${stc.colors.light};
 `;
 
 export default Hint;

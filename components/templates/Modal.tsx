@@ -1,7 +1,5 @@
-import Button from "@components/atoms/Button";
-import styleVariables from "@styles/variables";
+import stc from "@styles/constants";
 import {
-  Component,
   CSSProperties,
   HTMLAttributes,
   ReactNode,
@@ -40,7 +38,7 @@ const ModalComp = styled(Mask)`
       height: 48px;
       font-size: 1.6rem;
       /* border-bottom: 1px solid #eee; */
-      background-color: ${styleVariables.colors.primary};
+      background-color: ${stc.colors.primary};
       color: white;
       font-weight: bold;
       & > .modal-close {
@@ -48,9 +46,9 @@ const ModalComp = styled(Mask)`
         transition: all 0.3s;
         background-color: transparent;
         &:hover {
-          background-color: ${styleVariables.colors.dark};
+          background-color: ${stc.colors.dark};
         }
-        background-image: url(${styleVariables.assets.close});
+        background-image: url(${stc.assets.close});
         background-repeat: no-repeat;
         background-position: center;
         background-size: 16px;
@@ -77,10 +75,10 @@ const ModalComp = styled(Mask)`
     list-style: none;
     position: relative;
     width: 100%;
-    max-width: calc(${styleVariables.media.mobile}px - 100px);
-    @media screen and (max-width: ${styleVariables.media.mobile}px) {
+    max-width: calc(${stc.media.mobile}px - 100px);
+    @media screen and (max-width: ${stc.media.mobile}px) {
       height: 100%;
-      max-width: ${styleVariables.media.mobile}px;
+      max-width: ${stc.media.mobile}px;
     }
   }
 `;

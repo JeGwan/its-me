@@ -1,5 +1,5 @@
 import Input from "@components/atoms/Input";
-import styleVariables from "@styles/variables";
+import stc from "@styles/constants";
 import React, { InputHTMLAttributes, useState } from "react";
 import styled from "styled-components";
 
@@ -21,17 +21,17 @@ const AdvancedInputComp = styled.div`
       bottom: 4.2rem;
       left: 0.2rem;
       &:not(.value) {
-        color: ${styleVariables.colors.primary};
+        color: ${stc.colors.primary};
       }
     }
   }
   & > input {
     margin-top: auto;
-    height: ${styleVariables.ui.defaultHeight}px;
-    line-height: ${styleVariables.ui.defaultHeight}px;
+    height: ${stc.ui.defaultHeight}px;
+    line-height: ${stc.ui.defaultHeight}px;
     font-size: 1.4rem;
     border-radius: 0.4rem;
-    padding: 0 ${styleVariables.ui.defaultPadding}px;
+    padding: 0 ${stc.ui.defaultPadding}px;
     cursor: pointer;
     transition: all 0.3s;
     background-color: white;
@@ -41,10 +41,10 @@ const AdvancedInputComp = styled.div`
       width: 100%;
     }
     &:hover {
-      border-color: ${styleVariables.colors.primary};
+      border-color: ${stc.colors.primary};
     }
     &:focus {
-      border-color: ${styleVariables.colors.primary};
+      border-color: ${stc.colors.primary};
       box-shadow: 0 0 0 2px rgb(222 0 9 / 20%);
     }
     &::placeholder {

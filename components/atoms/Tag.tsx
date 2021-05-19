@@ -1,4 +1,4 @@
-import styleVariables from "@styles/variables";
+import stc from "@styles/constants";
 import styled from "styled-components";
 
 const Tag = styled.span`
@@ -6,8 +6,8 @@ const Tag = styled.span`
   border-radius: 0.4rem;
   padding: 0 0.8rem;
   margin: 0 0.2rem;
-  background-color: ${styleVariables.colors.grey7};
-  color: ${styleVariables.colors.grey3};
+  background-color: ${stc.colors.grey7};
+  color: ${stc.colors.grey3};
   font-weight: bold;
   font-size: 1.6rem;
   line-height: 2;

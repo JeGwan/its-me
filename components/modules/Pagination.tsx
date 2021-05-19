@@ -2,7 +2,7 @@ import Button from "@components/atoms/Button";
 import React, { HTMLAttributes } from "react";
 import RcPagination, { PaginationProps } from "rc-pagination";
 import styled from "styled-components";
-import styleVariables from "@styles/variables";
+import stc from "@styles/constants";
 
 const PaginationComp = styled.div`
   & > .rc-pagination {
@@ -33,7 +33,7 @@ const PaginationComp = styled.div`
         margin-left: 8px;
       }
       &.rc-pagination-item-active {
-        background-color: ${styleVariables.colors.primary};
+        background-color: ${stc.colors.primary};
         color: white;
       }
       &.rc-pagination-jump-next {

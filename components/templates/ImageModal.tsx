@@ -1,7 +1,7 @@
 import React from "react";
 import Modal, { ModalProps } from "./Modal";
 import styled from "styled-components";
-import styleVariables from "@styles/variables";
+import stc from "@styles/constants";
 
 const ImageModalComp = styled.div`
   & > img {
@@ -17,7 +17,7 @@ const ImageModal = ({ imageUrl, ...props }: ImageModalProps) => {
   return (
     <Modal title="이미지 보기" {...props}>
       <ImageModalComp>
-        <img src={imageUrl || styleVariables.assets.picture} alt="이미지" />
+        <img src={imageUrl || stc.assets.picture} alt="이미지" />
       </ImageModalComp>
     </Modal>
   );

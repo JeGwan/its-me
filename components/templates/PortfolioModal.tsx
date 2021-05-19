@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Portfolio } from "@lib/types";
 import Title from "@components/atoms/Titles";
 import AppSwiper, { SwiperSlide } from "@components/modules/AppSwiper";
-import styleVariables from "@styles/variables";
+import stc from "@styles/constants";
 import ImageModal from "./ImageModal";
 
 const PortfolioModalComp = styled.div`
@@ -56,7 +56,7 @@ const PortfolioModal = ({ portfolio, ...props }: PortfolioModalProps) => {
                       src={imageSrc}
                       alt={`image-${index}`}
                       onError={(e) => {
-                        e.currentTarget.src = styleVariables.assets.picture;
+                        e.currentTarget.src = stc.assets.picture;
                       }}
                       onClick={() => setPreviewImage(imageSrc)}
                     />

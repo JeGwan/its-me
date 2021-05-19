@@ -1,14 +1,10 @@
 import Button from "@components/atoms/Button";
-import Hint from "@components/atoms/Hint";
 import Tag from "@components/atoms/Tag";
 import Title from "@components/atoms/Titles";
-import AppSwiper, { SwiperSlide } from "@components/modules/AppSwiper";
 import Alert from "@components/templates/Alert";
 import Container from "@components/templates/Container";
-import PortfolioModal from "@components/templates/PortfolioModal";
-import { contacts, portfolios, techStacks } from "@lib/constants";
-import { Portfolio } from "@lib/types";
-import styleVariables from "@styles/variables";
+import { contacts, techStacks } from "@lib/constants";
+import stc from "@styles/constants";
 import React, { useState } from "react";
 import styled from "styled-components";
 
@@ -24,9 +20,9 @@ const HomePageComp = styled.div`
       line-height: 1.4;
       font-weight: bolder;
       & > .blue {
-        color: ${styleVariables.colors.primary};
+        color: ${stc.colors.primary};
       }
-      @media screen and (max-width: ${styleVariables.media.mobile}px) {
+      @media screen and (max-width: ${stc.media.mobile}px) {
         font-size: 3rem;
       }
     }
@@ -108,7 +104,7 @@ const HomePageComp = styled.div`
         & > .title {
           margin: 1rem 0;
           text-align: center;
-          color: ${styleVariables.colors.grey3};
+          color: ${stc.colors.grey3};
           font-weight: bold;
         }
       }
@@ -120,7 +116,7 @@ const HomePageComp = styled.div`
         dt {
           flex: 0 0 80px;
           margin-right: 0.8rem;
-          color: ${styleVariables.colors.grey3};
+          color: ${stc.colors.grey3};
         }
         dd {
           font-weight: bold;
@@ -151,7 +147,7 @@ const HomePageComp = styled.div`
 
 const HomePage = () => {
   const [alertVisible, setAlertVisible] = useState(false);
-  const [portfolio, setPortfolio] = useState<Portfolio>();
+  // const [portfolio, setPortfolio] = useState<Portfolio>();
   return (
     <Container>
       <Alert

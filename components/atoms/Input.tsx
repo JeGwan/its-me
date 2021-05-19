@@ -1,27 +1,27 @@
-import styleVariables from "@styles/variables";
+import stc from "@styles/constants";
 import { InputHTMLAttributes } from "react";
 import styled from "styled-components";
 
 const InputComp = styled.input`
-  height: ${styleVariables.ui.defaultHeight}px;
-  line-height: ${styleVariables.ui.defaultHeight}px;
+  height: ${stc.ui.defaultHeight}px;
+  line-height: ${stc.ui.defaultHeight}px;
   font-size: 1.4rem;
   border-radius: 0.4rem;
-  padding: 0 ${styleVariables.ui.defaultPadding}px;
+  padding: 0 ${stc.ui.defaultPadding}px;
   cursor: pointer;
   transition: all 0.3s;
   background-color: white;
-  border: 1px solid ${styleVariables.colors.grey6};
+  border: 1px solid ${stc.colors.grey6};
   &.full {
     display: block;
     width: 100%;
   }
   &:hover {
-    border: 1px solid ${styleVariables.colors.primary};
+    border: 1px solid ${stc.colors.primary};
   }
   &:focus {
-    border: 1px solid ${styleVariables.colors.primary};
-    box-shadow: 0 0 0 2px ${styleVariables.colors.primaryAlpha};
+    border: 1px solid ${stc.colors.primary};
+    box-shadow: 0 0 0 2px ${stc.colors.primaryAlpha};
   }
   &:disabled {
     &:hover {
@@ -29,12 +29,12 @@ const InputComp = styled.input`
     }
     &:focus {
       border: 1px solid #ddd;
-      box-shadow: 0 0 0 2px ${styleVariables.colors.primaryAlpha};
+      box-shadow: 0 0 0 2px ${stc.colors.primaryAlpha};
     }
     background-color: #eee;
   }
   &::placeholder {
-    color: ${styleVariables.colors.grey6};
+    color: ${stc.colors.grey6};
   }
 `;
 

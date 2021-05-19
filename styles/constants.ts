@@ -2,7 +2,7 @@ import { hexToRgb } from "@lib/utils";
 
 const primary = "#0050FF";
 const primaryAlpha = `rgb(${hexToRgb(primary).join(" ")} / 20%)`;
-const styleVariables = {
+const stc = {
   media: {
     mobile: 800,
   },
@@ -33,4 +33,4 @@ const styleVariables = {
   },
 };
 
-export default styleVariables;
+export default stc;

@@ -2,7 +2,7 @@ import Head from "next/head";
 import { CSSProperties, HTMLAttributes, ReactNode, useContext } from "react";
 import { AppContext } from "@lib/context";
 import styled from "styled-components";
-import styleVariables from "@styles/variables";
+import stc from "@styles/constants";
 import { APP_NAME } from "@lib/constants";
 
 const ContainerComp = styled.div`
@@ -15,8 +15,8 @@ const ContainerComp = styled.div`
     min-height: 100vh;
     & > section {
       /* 모바일 퍼스트 */
-      max-width: ${styleVariables.media.mobile}px;
-      padding: 1.6rem ${styleVariables.ui.defaultPadding}px 5rem;
+      max-width: ${stc.media.mobile}px;
+      padding: 1.6rem ${stc.ui.defaultPadding}px 5rem;
       margin: 0 auto;
     }
     & > footer {

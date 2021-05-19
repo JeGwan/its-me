@@ -1,17 +1,17 @@
 import { classNames } from "@lib/utils";
-import styleVariables from "@styles/variables";
+import stc from "@styles/constants";
 import { ButtonHTMLAttributes } from "react";
 import styled from "styled-components";
 
 export const ButtonComp = styled.button`
-  height: ${styleVariables.ui.defaultHeight}px;
-  padding: 0 ${styleVariables.ui.defaultPadding}px;
-  line-height: ${styleVariables.ui.defaultHeight}px;
+  height: ${stc.ui.defaultHeight}px;
+  padding: 0 ${stc.ui.defaultPadding}px;
+  line-height: ${stc.ui.defaultHeight}px;
   font-size: 1.4rem;
   font-family: sans-serif;
   font-weight: bold;
-  color: ${styleVariables.colors.grey1};
-  background-color: ${styleVariables.colors.grey7};
+  color: ${stc.colors.grey1};
+  background-color: ${stc.colors.grey7};
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -24,19 +24,19 @@ export const ButtonComp = styled.button`
     width: 100%;
   }
   &:hover {
-    background-color: ${styleVariables.colors.grey6};
+    background-color: ${stc.colors.grey6};
   }
   &:active {
-    background-color: ${styleVariables.colors.grey5};
+    background-color: ${stc.colors.grey5};
   }
   &.primary {
-    background-color: ${styleVariables.colors.primary};
+    background-color: ${stc.colors.primary};
     color: white;
     &:hover {
-      background-color: ${styleVariables.colors.dark};
+      background-color: ${stc.colors.dark};
     }
     &:active {
-      background-color: ${styleVariables.colors.darker};
+      background-color: ${stc.colors.darker};
     }
   }
 `;

@@ -12,7 +12,8 @@ yarn pre 스크립트는 dependencies 와 devDependencies 를 모두 설치하�
 
 ### 1.2. environment variable
 
-- `.env` 에 개발시 사용할 환경변수를 넣습니다.
+- `.env.js` 에 개발시 사용할 환경변수를 넣습니다.
+- `cp .env-example.js .env.js` 로 시작하시면됩니다.
 
 ## 2. Project structure
 
