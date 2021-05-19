@@ -1,5 +1,4 @@
 import Button from "@components/atoms/Button";
-import Input from "@components/atoms/Input";
 import Main from "@components/atoms/Main";
 import Section from "@components/atoms/Section";
 import Tag from "@components/atoms/Tag";
@@ -182,8 +181,6 @@ const HomePage = () => {
               </Button>
             </div>
             <div className="body">
-              <Input />
-              <Input loading />
               <Title level={1}>👦🏻 한 줄 소개</Title>
               <p>
                 비효율을 개선하고, 꿈을 현실로 만들어주는 엔지니어! 코딩하는
