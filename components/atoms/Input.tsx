@@ -16,6 +16,7 @@ const InputComp = styled.input`
     display: block;
     width: 100%;
   }
+
   &:hover {
     border: 1px solid ${stc.colors.primary};
   }
@@ -36,12 +37,22 @@ const InputComp = styled.input`
   &::placeholder {
     color: ${stc.colors.grey6};
   }
+  &.loading {
+    &:hover {
+      border: 1px solid #ddd;
+    }
+    &:focus {
+      border: 1px solid #ddd;
+      box-shadow: 0 0 0 2px ${stc.colors.primaryAlpha};
+    }
+    background-color: #eee;
+  }
 `;
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   loading?: boolean;
 }
-const Input = ({ loading, ...props }: Props) => {
-  return <InputComp {...props} />;
+const Input = ({ loading, disabled, ...props }: Props) => {
+  return <InputComp disabled={loading || disabled} {...props} />;
 };
 export default Input;

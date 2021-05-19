@@ -1,5 +1,4 @@
-import Button from "@components/atoms/Button";
-import React, { HTMLAttributes } from "react";
+import React from "react";
 import RcPagination, { PaginationProps } from "rc-pagination";
 import styled from "styled-components";
 import stc from "@styles/constants";

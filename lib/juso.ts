@@ -65,7 +65,7 @@ export class Juso {
       return false;
     }
     //특정문자열(sql예약어의 앞뒤공백포함) 제거
-    const sqlArray = new Array(
+    const sqlArray = [
       "OR",
       "SELECT",
       "INSERT",
@@ -77,8 +77,8 @@ export class Juso {
       "UNION",
       "FETCH",
       "DECLARE",
-      "TRUNCATE"
-    );
+      "TRUNCATE",
+    ];
 
     let regex;
 

@@ -8,7 +8,7 @@ import { kakaoMapAddressApi } from "@lib/kakao";
 import Input from "@components/atoms/Input";
 import Button from "@components/atoms/Button";
 import DataDesc from "@components/atoms/DataDesc";
-import Pagination from "@components/modules/Pagination";
+import Pagination from "@components/organisms/Pagination";
 
 const AddressModalComp = styled.div`
   display: flex;
@@ -80,7 +80,7 @@ const AddressModal = ({ onSelectAddress = () => {}, ...props }: Props) => {
   const [loading, setLoading] = useState(false);
   const [fetched, setFetched] = useState(false);
 
-  const fetch = (keyword: string, currentPage: number = 1) => {
+  const fetch = (keyword: string, currentPage = 1) => {
     if (!Juso.isValidKeyword(keyword, alert)) return;
     if (loading) return alert("결과를 가져오고 있습니다.");
     setLoading(true);

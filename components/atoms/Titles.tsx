@@ -1,5 +1,5 @@
 import { HTMLAttributes } from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
 const TitleComp = styled.h1`
   &:first-child {

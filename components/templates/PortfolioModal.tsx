@@ -3,7 +3,7 @@ import Modal, { ModalProps } from "./Modal";
 import styled from "styled-components";
 import { Portfolio } from "@lib/types";
 import Title from "@components/atoms/Titles";
-import AppSwiper, { SwiperSlide } from "@components/modules/AppSwiper";
+import AppSwiper, { SwiperSlide } from "@components/organisms/AppSwiper";
 import stc from "@styles/constants";
 import ImageModal from "./ImageModal";
 
@@ -72,7 +72,7 @@ const PortfolioModal = ({ portfolio, ...props }: PortfolioModalProps) => {
           <ul className="links">
             {portfolio.links.map((link, index) => (
               <li key={index}>
-                <a target="_blank" href={link.url}>
+                <a target="_blank" rel="noreferrer" href={link.url}>
                   {link.title}
                 </a>
               </li>
