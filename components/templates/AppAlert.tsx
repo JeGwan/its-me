@@ -15,7 +15,7 @@ const alertAnimation = keyframes`
   }
 `;
 
-const AlertComp = styled(Mask)`
+const Wrapper = styled(Mask)`
   & > .alert {
     display: flex;
     flex-direction: column;
@@ -46,6 +46,7 @@ const AlertComp = styled(Mask)`
 
 export interface FunctionalAlertOption {
   title?: string;
+  message?: string;
   onClose?: () => void;
   footer?: ReactNode;
   bodyStyle?: CSSProperties;
@@ -57,8 +58,8 @@ export interface FunctionalAlertProps
   visible?: boolean;
 }
 
-const FunctionalAlert = ({
-  children,
+const AlertComponent = ({
+  message,
   destroyOnClose = false,
   visible = false,
   onClose = () => {},
@@ -69,11 +70,11 @@ const FunctionalAlert = ({
 }: FunctionalAlertProps) => {
   if (!visible && destroyOnClose) return null;
   return (
-    <AlertComp onClick={onClose} className={visible ? "visible" : "hidden"}>
+    <Wrapper onClick={onClose} className={visible ? "visible" : "hidden"}>
       <div className="alert" onClick={(e) => e.stopPropagation()} {...props}>
         <h2 className="alert-title">{title}</h2>
         <div className="alert-body" style={bodyStyle}>
-          {children}
+          {message}
         </div>
         <div className="alert-footer">
           {footer || (
@@ -83,27 +84,24 @@ const FunctionalAlert = ({
           )}
         </div>
       </div>
-    </AlertComp>
+    </Wrapper>
   );
 };
 
-FunctionalAlert.open = (
-  message: string,
-  { onClose, ...props }: FunctionalAlertOption = {}
-) => {
-  const root = document.getElementById("__next") || document.body;
-  const div = document.createElement("div");
-  root.appendChild(div);
-  const handleClose = () => {
-    if (onClose) onClose();
-    root.removeChild(div);
-  };
-  render(
-    <FunctionalAlert visible={true} onClose={handleClose} {...props}>
-      {message}
-    </FunctionalAlert>,
-    div
-  );
-};
+class AppAlert {
+  static open({ onClose, ...props }: FunctionalAlertOption = {}) {
+    const root = document.getElementById("__next") || document.body;
+    const div = document.createElement("div");
+    root.appendChild(div);
+    const handleClose = () => {
+      if (onClose) onClose();
+      root.removeChild(div);
+    };
+    render(
+      <AlertComponent visible={true} onClose={handleClose} {...props} />,
+      div
+    );
+  }
+}
 
-export default FunctionalAlert;
+export default AppAlert;
