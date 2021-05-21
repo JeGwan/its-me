@@ -6,7 +6,7 @@
     "build": "NODE_ENV=production next build",
     "deploy": "git pull && yarn pre && yarn build && pm2 restart its-me",
     "start": "next start",
-    "pre": "yarn install --production=false",
+    "pre": "yarn install",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
     "lint": "eslint . --ext ts --ext tsx --ext js",
