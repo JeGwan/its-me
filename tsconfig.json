@@ -25,12 +25,7 @@
       "@styles/*": ["./styles/*"],
       "@lib/*": ["./lib/*"],
       "@pages/*": ["./pages/*"]
-    },
-    "plugins": [
-      {
-        "name": "typescript-styled-plugin"
-      }
-    ]
+    }
   },
   "exclude": ["node_modules", ".next"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"]
