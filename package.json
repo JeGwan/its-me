@@ -12,7 +12,7 @@
     "lint": "eslint . --ext ts --ext tsx --ext js",
     "test": "jest",
     "test-all": "yarn lint && yarn type-check && yarn test",
-    "analyze": "ANALYZE=true next build "
+    "analyze": "ANALYZE=true next build"
   },
   "lint-staged": {
     "*.@(ts|tsx)": [
