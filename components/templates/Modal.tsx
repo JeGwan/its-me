@@ -9,6 +9,7 @@ import {
 import { createPortal } from "react-dom";
 import styled, { keyframes } from "styled-components";
 import Mask from "@components/atoms/Mask";
+import { classNames } from "@lib/utils";
 
 const modalAnimation = keyframes`
   0% {
@@ -98,6 +99,7 @@ const Modal = ({
   title,
   footer,
   bodyStyle,
+  className,
   ...props
 }: ModalProps) => {
   const [modalElement, setModalElement] = useState<HTMLElement>();
@@ -136,7 +138,11 @@ const Modal = ({
   if (!modalElement || !visible) return null;
   return createPortal(
     <ModalComp onClick={onClose}>
-      <div className="modal" onClick={(e) => e.stopPropagation()} {...props}>
+      <div
+        className={classNames(["modal", className])}
+        onClick={(e) => e.stopPropagation()}
+        {...props}
+      >
         <div className="modal-header">
           <h2>{title}</h2>
           <button className="modal-close" onClick={onClose} />
